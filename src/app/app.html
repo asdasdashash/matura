@@ -1,0 +1,56 @@
+<nav>
+  <ul>
+    <li>Home</li>
+
+  </ul>
+</nav>
+
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<div id="mineMenu" *ngIf="mineMenuOpen">
+  <span>Število min: </span>
+  <input type="number" [(ngModel)]="mineNum">
+  <button (click)="confirmMines()">OK</button>
+</div>
+
+
+<button (click)="openMineMenu()">Set Mines</button>
+
+
+<router-outlet />
