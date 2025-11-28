@@ -16,7 +16,7 @@ export class App {
   protected readonly title = signal('matura');
 
   @ViewChildren('cell') cells!: QueryList<ElementRef>;
-
+  randomNumber:number = 0;
   chance: number = 0;
   mineId: number = 0;
   mineNum: number = 5;
@@ -43,6 +43,9 @@ export class App {
   }
 
   getMineId(id: number){
+    this.randomNumber = Math.floor(Math.random() * 100) + 1;
+
+
     this.mineId = id;
     console.log(this.mineId);
 
@@ -50,7 +53,11 @@ export class App {
 
     const cell = cellArray[id - 1].nativeElement; // because your IDs start at 1
 
-    cell.style.backgroundColor = 'yellow';
+    if(this.chance<this.randomNumber){
+      cell.style.backgroundColor = "yellow";
+    }
+
+
 
   }
 
