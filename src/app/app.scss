@@ -71,8 +71,24 @@ td{
   color: white;
 }
 
+#confirmMines{
+  margin-top: -75vh;
+  position: fixed;
+  height: 5vh;
+  width: 10vh;
+  background-color: #454444;
+  color: white;
+  border: none;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 15px;
+  transition: 0.15s;
+}
 
+#confirmMines:hover{
+  scale:105%;
+  cursor: pointer;
 
+}
 
 td:hover{
   scale:1.05;
