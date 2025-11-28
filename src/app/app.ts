@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, viewChildren } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-  // ← import this
+
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 @Component({
@@ -17,58 +17,108 @@ export class App {
 
   @ViewChildren('cell') cells!: QueryList<ElementRef>;
   denar: number = 100;
+  betAmount: number = 100;
 
+  mineMenuOpen = true;
+  cashoutWindow = false;
+  gameLocked = true;
+
+  stevecMin: number = 0;
+  minePositions: Set<number> = new Set();
   randomNumber:number = 0;
-  chance: number = 0;
   mineId: number = 0;
   mineNum: number = 5;
-  mineMenuOpen = true;
+  
   safePolja = 0;
+
+
+
+  showMines(){
+    for (let i = 1; i <= 25; i++) {
+    
+      const cellArray = this.cells.toArray();  
+      const cell = cellArray[i - 1].nativeElement;
+
+      if (this.minePositions.has(i)) {
+        cell.style.backgroundColor = "black";   // mine
+      } 
+      
+      else {
+        cell.style.backgroundColor = "white"; // safe
+      }
+  }
+
+  }
   openMineMenu() {
     this.mineMenuOpen = true;
+
   }
 
-  confirmMines() {
+
+  confirmMines() { //PRIDOBIMO ŠTEVILO MIN
     if(this.mineNum > 24 || this.mineNum < 1){
       console.log('debil sii')
-      
+      return;
+    }
+
+    this.minePositions.clear();
+
+    while(this.minePositions.size < this.mineNum){
+      const pos = Math.floor(Math.random() * 25)+1;
+      this.minePositions.add(pos);
+    }
+   
+    console.log("Mine so na: ", [...this.minePositions]);
+    this.mineMenuOpen = false;
+
+    this.cashoutWindow = true;
+    this.gameLocked = false;
+
+    this.cells.forEach(c => {
+      const el = c.nativeElement;
+      el.style.backgroundColor = ""; // remove yellow/red
+    });
+
+    this.denar = this.denar-this.betAmount;
+  }
+
+
+  checkForMine(id: number){ //KO STISNEMO NA MINO
+    this.stevecMin++;
+
+    const cellArray = this.cells.toArray();  // make normal array
+    const cell = cellArray[id - 1].nativeElement; // because your IDs start at 1
+    
+    if (this.gameLocked) return; 
+
+    if (this.minePositions.has(id)){
+      cell.style.backgroundColor = "black";
+
+      this.stevecMin = 0;
+      this.showMines();
+      this.cashoutWindow = false;
+      this.gameLocked = true;
+      this.mineMenuOpen = true;
     }
 
     else{
-      console.log('Mines set to:', this.mineNum);
-      this.safePolja = 25;
-
-      this.mineMenuOpen = false;
-      this.chance = (this.mineNum/25)*100;
-      this.safePolja = this.safePolja - this.mineNum;
-      console.log(this.safePolja);
+      cell.style.backgroundColor = "white";
     }
 
   }
 
-  getMineId(id: number){
-    this.randomNumber = Math.floor(Math.random() * 100) + 1;
-    console.log(this.randomNumber)
-    console.log("šansa za mino "+this.chance)
-    console.log("st varnih polj "+this.safePolja)
+  cashoutFun(){
+    if(this.stevecMin == 0) return;
+    this.showMines()
+    console.log(this.minePositions);
 
 
-    this.mineId = id;
+    this.minePositions.clear();
+    this.gameLocked = true;
+    this.mineMenuOpen = true;
+    this.cashoutWindow = false;
+    this.stevecMin = 0;
 
-    const cellArray = this.cells.toArray();  // make normal array
-
-    const cell = cellArray[id - 1].nativeElement; // because your IDs start at 1
-
-    if(this.chance < this.randomNumber && this.safePolja > 0){
-      cell.style.backgroundColor = "yellow";
-    }
-
-    else{
-      cell.style.backgroundColor = "red";
-    }
-
-
-    this.safePolja--;
   }
 
 }

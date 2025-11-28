@@ -54,10 +54,10 @@ td{
 #mineMenu {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
 
-  height: 12vh;
+  height: 24vh;
   width: 40vh;
 
   background-color: #454444;
@@ -69,6 +69,7 @@ td{
   justify-content: center;
   gap: 2vh;
   color: white;
+  flex-direction: column;
 }
 
 #confirmMines{
@@ -84,9 +85,30 @@ td{
   transition: 0.15s;
 }
 
+#cashoutWindow{
+  display: flex;
+  position:fixed;
+  margin-top: 70vh;
+  background-color: #454444;
+  height: 5vh;
+  width: 15vh;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.15s;
+  box-shadow: 3px 3px 3px black;
+}
+
 #confirmMines:hover{
   scale:105%;
   cursor: pointer;
+
+}
+
+#cashoutWindow:hover{
+  scale:105%;
+  cursor:pointer;
 
 }
 
