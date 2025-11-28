@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li>Home</li>
-
+    <li>{{denar}}</li>
   </ul>
 </nav>
 
@@ -43,11 +43,13 @@
   </tr>
 </table>
 
-<div id="mineMenu" *ngIf="mineMenuOpen">
-  <span>Število min: </span>
-  <input type="number" [(ngModel)]="mineNum">
-  <button (click)="confirmMines()">OK</button>
-</div>
+@if (mineMenuOpen) {
+  <div id="mineMenu">
+    <span>Število min: </span>
+    <input type="number" [(ngModel)]="mineNum">
+    <button (click)="confirmMines()">OK</button>
+  </div>
+}
 
 
 <button id = "confirmMines"(click)="openMineMenu()">Set Mines</button>
