@@ -1,10 +1,20 @@
 <nav>
-  <ul>
-    <li>Home</li>
-    <li>{{denar}}</li>
-  </ul>
+  <div class="nav-left">
+    <span class="logo" routerLink="/">Mine</span>
+  </div>
+  <div class="nav-right">
+    <div class="balance-display">
+      <span class="balance-label">Denar:</span>
+      <span class="balance-amount">${{denar}}</span>
+    </div>
+  </div>
 </nav>
-
+@if (!mineMenuOpen && !showLostMessage) {
+  <div id="multiplierDisplay">Multiplier: {{currentMultiplier}}x</div>
+}
+@if (showLostMessage) {
+  <div id="lostMessage">Luzer</div>
+}
 <table>
   <tr>
     <td #cell (click) = "checkForMine(1)"></td>
@@ -42,25 +52,22 @@
     <td #cell (click) = "checkForMine(25)"></td>
   </tr>
 </table>
-
 @if (mineMenuOpen) {
+  <div id="overlay"></div>
   <div id="mineMenu">
     <div>
       <span>Število min: </span>
-      <input type="number" [(ngModel)]="mineNum">
+      <input [(ngModel)]="mineNum" [min]="1" [max]="24">
     </div>
     <div>
-    <span>Bet: </span>
-    <input type="number" [(ngModel)]="betAmount">
+      <span>Bet: </span>
+      <input [(ngModel)]="betAmount" [min]="1" [max]="denar">
     </div>
     <button (click)="confirmMines()">OK</button>
-
   </div>
 }
-
 @if (cashoutWindow){
-  
-    <div id = "cashoutWindow"(click) = "cashoutFun()">Cashout</div>
+  <div id="cashoutWindow" (click)="cashoutFun()">
+    Cashout: {{getPotentialWinnings()}}
+  </div>
 }
-
-<router-outlet />

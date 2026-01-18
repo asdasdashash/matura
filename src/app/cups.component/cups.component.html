@@ -1,0 +1,27 @@
+<nav>
+  <div class="nav-left">
+    <span class="logo" routerLink="/">Cups</span>
+  </div>
+  <div class="nav-right">
+    <div class="balance-display">
+      <span class="balance-label">Denar:</span>
+      <span class="balance-amount">${{denar}}</span>
+    </div>
+  </div>
+</nav>
+
+@if(!gameStart){
+  <div class = "cupsMenu">
+    <div>
+      <span>Bet: </span>
+      <input [(ngModel)]="betAmount" [min]="1" [max]="denar">
+    </div>
+    <button (click) = "startCups()">OK</button>
+  </div>
+}
+
+<div class = "cupLayout">
+  <div class = "cup" (click) = "checkCup(1)"></div>
+  <div class = "cup" (click) = "checkCup(2)"></div>
+  <div class = "cup" (click) = "checkCup(3)"></div>
+</div>
