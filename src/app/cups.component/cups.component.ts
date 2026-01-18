@@ -14,6 +14,7 @@ export class CupsComponent {
   multiplier:number = 0;
   gameStart: boolean = false;
   betAmount: number = 10;
+  winnings: number = 0; 
 
   constructor(public balanceService: BalanceService) {}
   get denar(){
@@ -39,15 +40,20 @@ export class CupsComponent {
         }
       }
 
-      this.gameStart = false;
-     
-      console.log(this.multiplier);
+      console.log("multiplier: "+this.multiplier);
+      
+      this.winnings = this.betAmount * this.multiplier;
+      console.log("winnings: " + this.winnings);
+      this.balanceService.addBalance(this.winnings);
+
       this.multiplier = 0;
     }
 
     else{
       console.log("zgubo si")
     }
+
+    this.gameStart = false;
   }
 
   startCups(){
