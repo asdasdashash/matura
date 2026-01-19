@@ -1,0 +1,40 @@
+<nav>
+  <div class="nav-left">
+    <span class="logo">Casino</span>
+  </div>
+  <div class="nav-right">
+    <div class="balance-display">
+      <span class="balance-label">Balance:</span>
+      <span class="balance-amount">€{{denar}}</span>
+    </div>
+  </div>
+</nav>
+
+<div class = "ballsLayout">
+  <div class = "ball" (click) = "ballClick()">{{multiplier}}X</div>
+  <div class = "ball" (click) = "ballClick()">{{multiplier}}X</div>
+</div>
+
+@if(gameStart && !gameOver){
+  <div id="cashoutWindow" (click) = "cashoutFun()">
+      Cashout: {{potentialWinnings}}
+  </div>
+}
+
+@if(!gameStart && !gameOver){
+    <div class = "profits">
+        <span>You {{gameResult}}</span>
+        <button (click)="tryAgain()">Try Again?</button>
+    </div>
+}
+
+@if (!gameStart && gameOver) {
+  <div id="overlay"></div>
+  <div id="ballzMenu">
+     <div>
+       <span>Bet: </span>
+       <input [(ngModel)]="betAmount" [min]="1" [max]="denar">
+     </div>
+     <button (click)="startGame()">OK</button>
+   </div>
+}
