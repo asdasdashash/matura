@@ -69,11 +69,14 @@ export class MinesComponent {
       alert('Not enough money!');
       return;
     }
+
     this.minePositions.clear();
+
     while(this.minePositions.size < this.mineNum){
       const pos = Math.floor(Math.random() * 25)+1;
       this.minePositions.add(pos);
     }
+
     console.log("Mine so na: ", [...this.minePositions]);
     this.mineMenuOpen = false;
     this.cashoutWindow = true;
@@ -84,6 +87,7 @@ export class MinesComponent {
       const el = c.nativeElement;
       el.style.backgroundColor = "";
     });
+    
     this.balanceService.subtractBalance(this.betAmount);
   }
   
@@ -103,6 +107,7 @@ export class MinesComponent {
       this.mineMenuOpen = true;
       this.showLostMessage = true;
     }
+
     else{
       cell.style.backgroundColor = "white";
       this.stevecMin++;

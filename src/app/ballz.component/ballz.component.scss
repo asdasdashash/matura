@@ -60,9 +60,9 @@ nav {
   letter-spacing: 0.3px;
 }
 
-.ballsLayout {
+.balloonLayout {
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -71,19 +71,19 @@ nav {
     align-items: center;
     gap: 5vh;
 
-    height: 20vh;
+    height: 40vh;
     width: 40vh;
     z-index: 1;
 
-    background: #1a1d26;
-    border-radius: 2vh;
 
 }
 
-.ball{
+
+
+#balloon{
     z-index: 100;
     border-radius: 100%;
-    height:10vh;
+    height:13vh;
     width: 10vh;
     background-color: #aaa;
     transition: 0.15s;
@@ -93,14 +93,28 @@ nav {
     align-items: center;
 
     font-size: 3vh;
+    
 }
 
-.ball:hover{
+.pump {
+  height: 10vh;
+  width: 3vh;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background-color: #aaa;
+  transition: 0.25s;
+  
+  &:hover {
     cursor: pointer;
-    scale: 1.1;
+    transform: translate(-50%, -50%) scale(1.1);
     background-color: white;
-    animation: shaking 0.25s ease-in-out infinite;
+  }
 }
+
+
 
 #cashoutWindow {
   display: flex;
@@ -136,7 +150,7 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 30vh;
+  height: 40vh;
   width: 40vh;
   background-color: #1a1d26;
   border-radius: 15px;
@@ -164,7 +178,7 @@ nav {
   color: #aaa;
 }
 
-#ballzMenu input {
+#typeIn {
   padding: 1vh;
   border-radius: 8px;
   border: 1px solid #2c2f36;
@@ -173,7 +187,7 @@ nav {
   color: white;
 }
 
-#ballzMenu input:focus {
+#typeIn:focus {
   outline: 2px solid #4CAF50;
   border-color: #4CAF50;
 }

@@ -5,19 +5,21 @@
   <div class="nav-right">
     <div class="balance-display">
       <span class="balance-label">Balance:</span>
-      <span class="balance-amount">€{{denar}}</span>
+      <span class="balance-amount">€{{denar.toFixed(2)}}</span>
     </div>
   </div>
 </nav>
 
-<div class = "ballsLayout">
-  <div class = "ball" (click) = "ballClick()">{{multiplier}}X</div>
-  <div class = "ball" (click) = "ballClick()">{{multiplier}}X</div>
+<div class = "balloonLayout">
+  <div id = "balloon" #balloon>{{currentMultiplier.toFixed(2)}}X</div>
 </div>
+
+<div class = "pump"  (click) = "ballClick()"></div>
+
 
 @if(gameStart && !gameOver){
   <div id="cashoutWindow" (click) = "cashoutFun()">
-      Cashout: {{potentialWinnings}}
+      Cashout: {{potentialWinnings.toFixed(2)}}
   </div>
 }
 
@@ -32,8 +34,14 @@
   <div id="overlay"></div>
   <div id="ballzMenu">
      <div>
-       <span>Bet: </span>
-       <input [(ngModel)]="betAmount" [min]="1" [max]="denar">
+       <span>Bet:</span>
+       <input id = "typeIn"[(ngModel)]="betAmount" [min]="1" [max]="denar">
+       <input type ="range" step="0.1" [(ngModel)]="betAmount" [min]="1" [max]="denar">
+     </div>
+     <div>
+       <span>Multiplier (1.1 - 2.0):</span>
+       <input id = "typeIn" [(ngModel)]="multiplier" [min]="1.1" [max]="2" step="0.1">
+       <input type="range" [(ngModel)]="multiplier" [min]="1.1" [max]="2" step="0.1">
      </div>
      <button (click)="startGame()">OK</button>
    </div>
