@@ -12,7 +12,7 @@ import { BalanceService } from '../balance.service';
   styleUrl: './ballz.component.scss'
 })
 export class BallzComponent {
-  multiplier: number = 1.5; // User-selected multiplier (between 1 and 2)
+  multiplier: number = 1.5;
   chance: number = 0;
   max: number = 2;
   gameStart: boolean = false;
@@ -20,7 +20,7 @@ export class BallzComponent {
   betAmount: number = 10;
   potentialWinnings: number = 0;
   balloonScale: number = 1;
-  currentMultiplier: number = 1; // Current accumulated multiplier
+  currentMultiplier: number = 1; 
   balloonRedProgress: number = 0;
   dropdownMenu: boolean = true; // SPREMENI V FALSE KO SI KONEC
   
@@ -80,7 +80,7 @@ export class BallzComponent {
     
     this.balanceService.subtractBalance(this.betAmount);
     this.potentialWinnings = this.betAmount;
-    this.currentMultiplier = 1; // Reset to 1 at start
+    this.currentMultiplier = 1; this.potentialWinnings
     this.gameOver = false;
     this.gameStart = true;
   }

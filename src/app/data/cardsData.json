@@ -1,0 +1,68 @@
+{
+  "cards": [
+    { "id": 1, "cardType": "2", "cardSymbol": "hearts", "cardValue": 2 },
+    { "id": 2, "cardType": "2", "cardSymbol": "diamonds", "cardValue": 2 },
+    { "id": 3, "cardType": "2", "cardSymbol": "clubs", "cardValue": 2 },
+    { "id": 4, "cardType": "2", "cardSymbol": "spades", "cardValue": 2 },
+
+    { "id": 5, "cardType": "3", "cardSymbol": "hearts", "cardValue": 3 },
+    { "id": 6, "cardType": "3", "cardSymbol": "diamonds", "cardValue": 3 },
+    { "id": 7, "cardType": "3", "cardSymbol": "clubs", "cardValue": 3 },
+    { "id": 8, "cardType": "3", "cardSymbol": "spades", "cardValue": 3 },
+
+    { "id": 9, "cardType": "4", "cardSymbol": "hearts", "cardValue": 4 },
+    { "id": 10, "cardType": "4", "cardSymbol": "diamonds", "cardValue": 4 },
+    { "id": 11, "cardType": "4", "cardSymbol": "clubs", "cardValue": 4 },
+    { "id": 12, "cardType": "4", "cardSymbol": "spades", "cardValue": 4 },
+
+    { "id": 13, "cardType": "5", "cardSymbol": "hearts", "cardValue": 5 },
+    { "id": 14, "cardType": "5", "cardSymbol": "diamonds", "cardValue": 5 },
+    { "id": 15, "cardType": "5", "cardSymbol": "clubs", "cardValue": 5 },
+    { "id": 16, "cardType": "5", "cardSymbol": "spades", "cardValue": 5 },
+
+    { "id": 17, "cardType": "6", "cardSymbol": "hearts", "cardValue": 6 },
+    { "id": 18, "cardType": "6", "cardSymbol": "diamonds", "cardValue": 6 },
+    { "id": 19, "cardType": "6", "cardSymbol": "clubs", "cardValue": 6 },
+    { "id": 20, "cardType": "6", "cardSymbol": "spades", "cardValue": 6 },
+
+    { "id": 21, "cardType": "7", "cardSymbol": "hearts", "cardValue": 7 },
+    { "id": 22, "cardType": "7", "cardSymbol": "diamonds", "cardValue": 7 },
+    { "id": 23, "cardType": "7", "cardSymbol": "clubs", "cardValue": 7 },
+    { "id": 24, "cardType": "7", "cardSymbol": "spades", "cardValue": 7 },
+
+    { "id": 25, "cardType": "8", "cardSymbol": "hearts", "cardValue": 8 },
+    { "id": 26, "cardType": "8", "cardSymbol": "diamonds", "cardValue": 8 },
+    { "id": 27, "cardType": "8", "cardSymbol": "clubs", "cardValue": 8 },
+    { "id": 28, "cardType": "8", "cardSymbol": "spades", "cardValue": 8 },
+
+    { "id": 29, "cardType": "9", "cardSymbol": "hearts", "cardValue": 9 },
+    { "id": 30, "cardType": "9", "cardSymbol": "diamonds", "cardValue": 9 },
+    { "id": 31, "cardType": "9", "cardSymbol": "clubs", "cardValue": 9 },
+    { "id": 32, "cardType": "9", "cardSymbol": "spades", "cardValue": 9 },
+
+    { "id": 33, "cardType": "10", "cardSymbol": "hearts", "cardValue": 10 },
+    { "id": 34, "cardType": "10", "cardSymbol": "diamonds", "cardValue": 10 },
+    { "id": 35, "cardType": "10", "cardSymbol": "clubs", "cardValue": 10 },
+    { "id": 36, "cardType": "10", "cardSymbol": "spades", "cardValue": 10 },
+
+    { "id": 37, "cardType": "J", "cardSymbol": "hearts", "cardValue": 10 },
+    { "id": 38, "cardType": "J", "cardSymbol": "diamonds", "cardValue": 10 },
+    { "id": 39, "cardType": "J", "cardSymbol": "clubs", "cardValue": 10 },
+    { "id": 40, "cardType": "J", "cardSymbol": "spades", "cardValue": 10 },
+
+    { "id": 41, "cardType": "Q", "cardSymbol": "hearts", "cardValue": 10 },
+    { "id": 42, "cardType": "Q", "cardSymbol": "diamonds", "cardValue": 10 },
+    { "id": 43, "cardType": "Q", "cardSymbol": "clubs", "cardValue": 10 },
+    { "id": 44, "cardType": "Q", "cardSymbol": "spades", "cardValue": 10 },
+
+    { "id": 45, "cardType": "K", "cardSymbol": "hearts", "cardValue": 10 },
+    { "id": 46, "cardType": "K", "cardSymbol": "diamonds", "cardValue": 10 },
+    { "id": 47, "cardType": "K", "cardSymbol": "clubs", "cardValue": 10 },
+    { "id": 48, "cardType": "K", "cardSymbol": "spades", "cardValue": 10 },
+
+    { "id": 49, "cardType": "A", "cardSymbol": "hearts", "cardValue": 11 },
+    { "id": 50, "cardType": "A", "cardSymbol": "diamonds", "cardValue": 11 },
+    { "id": 51, "cardType": "A", "cardSymbol": "clubs", "cardValue": 11 },
+    { "id": 52, "cardType": "A", "cardSymbol": "spades", "cardValue": 11 }
+  ]
+}
