@@ -1,15 +1,4 @@
-<nav>
-  <div class="nav-left">
-    <span class="logo">Casino</span>
-  </div>
-  <div class="nav-right">
-    <div class="balance-display">
-      <span class="balance-label">Balance:</span>
-      <span class="balance-amount">{{denar}}</span>
-    </div>
-  </div>
-</nav>
-
+<app-navbar></app-navbar>
 <div class="card"
      *ngFor="let card of drawnCards; let i = index" 
      [id]="'c' + (i + 1)" 

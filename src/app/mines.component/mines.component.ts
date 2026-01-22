@@ -2,11 +2,12 @@ import { Component, signal, ViewChildren, QueryList, ElementRef } from '@angular
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BalanceService } from '../balance.service';
+import { NavbarComponent } from "../navbar.component/navbar.component";
 
 @Component({
   selector: 'app-mines',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, NavbarComponent],
   templateUrl: './mines.component.html',
   styleUrls: ['./mines.component.scss']
 })

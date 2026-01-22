@@ -1,14 +1,4 @@
-<nav>
-  <div class="nav-left">
-    <span class="logo" routerLink="/">Mine</span>
-  </div>
-  <div class="nav-right">
-    <div class="balance-display">
-      <span class="balance-label">Denar:</span>
-      <span class="balance-amount">${{denar}}</span>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 
 @if (!mineMenuOpen && !showLostMessage) {
   <div id="multiplierDisplay">Multiplier: {{currentMultiplier}}x</div>

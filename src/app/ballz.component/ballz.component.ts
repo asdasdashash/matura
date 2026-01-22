@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { BalanceService } from '../balance.service';
+import { NavbarComponent } from '../navbar.component/navbar.component';
 
 @Component({
   selector: 'app-ballz.component',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, NavbarComponent],
   templateUrl: './ballz.component.html',
   styleUrl: './ballz.component.scss'
 })

@@ -3,10 +3,11 @@ import { BalanceService } from '../balance.service';
 import { NgFor } from '@angular/common';
 import { Card } from '../models/card.interface';
 import cardsData from '../data/cardsData.json';
+import { NavbarComponent } from '../navbar.component/navbar.component';
 
 @Component({
   selector: 'app-card.game.component',
-  imports: [NgFor],
+  imports: [NgFor, NavbarComponent],
   templateUrl: './card.game.component.html',
   styleUrl: './card.game.component.scss',
 })
@@ -21,6 +22,7 @@ export class CardGameComponent {
   clickedCount: number = 0;
   plCardValue: number = 0;
   opCardValue: number = 0;
+  plWon:boolean = false;
 
 
   cards: Card[]  = cardsData.cards;
@@ -61,19 +63,24 @@ export class CardGameComponent {
 
     else{
 
+      console.log("izvedla se je samo ne dela ti for some reason")
       for(let i = 0; i != this.drawnCards.length; i++){
         
         if(this.drawnCards[i].clicked == true){
           this.plCardValue += this.drawnCards[i].cardValue;
+          
         }
 
         else{
           this.opCardValue += this.drawnCards[i].cardValue;
+          
         }
 
       }
-      console.log(this.plCardValue);
-      console.log(this.opCardValue);
+      
     }
+    console.log(this.plCardValue)
+    console.log(this.opCardValue)
+    
   }
 }

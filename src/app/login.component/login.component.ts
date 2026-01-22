@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../navbar.component/navbar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule, NavbarComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
